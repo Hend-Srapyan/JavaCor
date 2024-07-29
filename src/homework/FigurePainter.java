@@ -2,84 +2,80 @@ package homework;
 
 
 public class FigurePainter {
-    public static void main(String[] args) {
-        System.out.println("1)");
-        for (int i = 0; i <= 5; i++) {
+
+    void figureOne(int n, char c) {
+        for (int i = 0; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                System.out.print("* ");
+                System.out.print(c + " ");
             }
             System.out.println();
         }
         System.out.println();
-        System.out.println();
+    }
 
-        System.out.println("2)");
-        for (int i = 5; i >= 0; i--) {
+    void figureTwo(int n, char c) {
+        for (int i = n; i >= 0; i--) {
             for (int j = i; j > 0; j--) {
-                System.out.print("* ");
+                System.out.print(c + " ");
             }
             System.out.println();
 
         }
-        System.out.println();
-        System.out.println();
+    }
 
-        System.out.println("3)");
-        int x = 5;
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < x - i - 1; j++) {
+    void figureThree(int n, char c) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 System.out.print("  ");
             }
             for (int j = 0; j < i + 1; j++) {
-                System.out.print("* ");
+                System.out.print(c + " ");
             }
 
             System.out.println();
         }
         System.out.println();
-        System.out.println();
+    }
 
-        System.out.println("4)");
-        for (int i = 6; i > 0; i--) {
-            for (int j = 6 - i; j > 0; j--) {
+
+    void figureFour(int n, char c) {
+        for (int i = n; i > 0; i--) {
+            for (int j = n - i; j > 0; j--) {
                 System.out.print("  ");
             }
             for (int j = i - 1; j > 0; j--) {
-                System.out.print("* ");
-            }
-
-            System.out.println();
-        }
-
-        System.out.println();
-        System.out.println();
-
-        System.out.println("5)");
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5 - i - 1; j++) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < i + 1; j++) {
-                System.out.print("* ");
-            }
-
-            System.out.println();
-        }
-        for (int i = 5; i > 0; i--) {
-            for (int j = 5 - i; j > 0; j--) {
-
-                System.out.print(" ");
-            }
-            System.out.print(" ");
-            for (int j = i - 1; j > 0; j--) {
-                ;
-                System.out.print("* ");
+                System.out.print(c + " ");
             }
 
             System.out.println();
         }
     }
 
+    void figureFive(int n, char c) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(c + " ");
+            }
+
+            System.out.println();
+        }
+        for (int i = n; i > 0; i--) {
+            for (int j = n - i; j > 0; j--) {
+
+                System.out.print(" ");
+            }
+            System.out.print(" ");
+            for (int j = i - 1; j > 0; j--) {
+                ;
+                System.out.print(c + " ");
+            }
+
+            System.out.println();
+        }
+    }
 }
 
 
