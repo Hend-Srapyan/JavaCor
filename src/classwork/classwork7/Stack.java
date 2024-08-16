@@ -1,28 +1,28 @@
-package classwork;
+package classwork.classwork7;
 
 public class Stack {
-    private int[] stck = new int[10];
-     private int tos;
+    private int[] stck;
+    private int tos;
 
-    Stack(){
+    Stack(int size){
+        stck = new int[size];
         tos = -1;
-
     }
 
     void push(int item){
-        if (tos == 9){
+        if (tos == stck.length - 1){
             System.out.println("Cтeк заполнен.");
-        }else
+        }else {
             stck[++tos] = item;
-
+        }
     }
 
     int pop(){
         if (tos < 0){
             System.out.println("Cтeк не загружен.");
             return 0;
-        }else
+        }else {
             return stck[tos--];
+        }
     }
-
 }
