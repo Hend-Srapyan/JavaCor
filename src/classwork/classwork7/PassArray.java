@@ -1,4 +1,4 @@
-package classwork.classwork8;
+package classwork.classwork7;
 
 public class PassArray {
     static void vaTest(int[] v) {

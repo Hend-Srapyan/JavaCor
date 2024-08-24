@@ -1,4 +1,4 @@
-package classwork.classwork8;
+package classwork.classwork7;
 
 public class VarArgs2 {
     static void vaTest(String msg, int ... v){

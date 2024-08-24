@@ -1,28 +1,28 @@
 package homework.bracechecker;
 
 public class Stack {
-    private int[] stck;
+    private int[] array = new int[10];
     private int tos;
 
-    Stack(int size){
-        stck = new int[size];
+
+    public Stack() {
         tos = -1;
     }
 
-    void push(int item){
-        if (tos == stck.length - 1){
+    public void push(int item) {
+        if (tos == 9) {
             System.out.println("Cтeк заполнен.");
-        }else {
-            stck[++tos] = item;
+        } else {
+            array[++tos] = item;
         }
     }
 
-    int pop(){
-        if (tos < 0){
+    public int pop() {
+        if (tos < 0) {
             System.out.println("Cтeк не загружен.");
             return 0;
-        }else {
-            return stck[tos--];
+        } else {
+            return array[tos--];
         }
     }
 }
