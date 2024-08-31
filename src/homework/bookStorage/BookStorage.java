@@ -6,8 +6,8 @@ public class BookStorage {
     private int size;
 
 
-    public void add(Book book){
-        if (books.length == size){
+    public void add(Book book) {
+        if (books.length == size) {
             extendStorage();
         }
         books[size++] = book;
@@ -15,11 +15,11 @@ public class BookStorage {
 
     private void extendStorage() {
         Book[] tmp = new Book[size + 10];
-        System.arraycopy(books,0,tmp,0,size);
+        System.arraycopy(books, 0, tmp, 0, size);
         books = tmp;
     }
 
-    public void print(){
+    public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(books[i]);
         }
@@ -27,7 +27,7 @@ public class BookStorage {
 
     public void searchBookByName(String keyword) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getBookName().contains(keyword)){
+            if (books[i].getBookName().contains(keyword)) {
                 System.out.println(books[i]);
             }
         }
@@ -35,7 +35,7 @@ public class BookStorage {
 
     public void searchBookByAuthorName(String keyword) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getAuthorName().contains(keyword)){
+            if (books[i].getAuthorName().contains(keyword)) {
                 System.out.println(books[i]);
             }
         }
@@ -43,34 +43,34 @@ public class BookStorage {
 
     public void searchBookByAuthorSurName(String keyword) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getAuthorSurName().contains(keyword)){
+            if (books[i].getAuthorSurName().contains(keyword)) {
                 System.out.println(books[i]);
             }
         }
     }
 
 
-    public Book getBookById(String id){
+    public Book getBookById(String id) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getId().equals(id)){
+            if (books[i].getId().equals(id)) {
                 return books[i];
             }
         }
         return null;
     }
 
-    public void searchBookByPrice(int minPrice, int maxPrice){
-         for (int i = 0; i < size; i++) {
-             if (books[i].getPrice() >= minPrice && books[i].getPrice() <= maxPrice){
-                 System.out.println(books[i]);
-             }
-         }
+    public void searchBookByPrice(int minPrice, int maxPrice) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getPrice() >= minPrice && books[i].getPrice() <= maxPrice) {
+                System.out.println(books[i]);
+            }
+        }
     }
 
     public void deletedBookById(String id) {
-        if (size > -1){
+        if (size > -1) {
             for (int i = 0; i < size; i++) {
-                if (books[i].getId().equals(id)){
+                if (books[i].getId().equals(id)) {
                     for (int j = i; j < size - 1; j++) {
                         books[j] = books[j + 1];
                     }

@@ -85,8 +85,8 @@ public class Book {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
         return Double.compare(price, book.price) == 0 && Double.compare(quantity, book.quantity) == 0 &&
-               Double.compare(numberOfPages, book.numberOfPages) == 0 && Objects.equals(id, book.id) &&
-               Objects.equals(bookName, book.bookName) && Objects.equals(authorName, book.authorName) && Objects.equals(authorSurName, book.authorSurName);
+                Double.compare(numberOfPages, book.numberOfPages) == 0 && Objects.equals(id, book.id) &&
+                Objects.equals(bookName, book.bookName) && Objects.equals(authorName, book.authorName) && Objects.equals(authorSurName, book.authorSurName);
     }
 
     @Override

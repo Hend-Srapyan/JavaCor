@@ -59,7 +59,6 @@ public class Library {
     }
 
 
-
     private static void addBook() {
         System.out.println("Please input book id");
         String id = scanner.nextLine();
@@ -158,7 +157,7 @@ public class Library {
     }
 
 
-  private static void deletedBookById() {
+    private static void deletedBookById() {
         bookStorage.print();
         System.out.println("Please input book id");
         String id = scanner.nextLine();
@@ -173,8 +172,8 @@ public class Library {
         System.out.println("Please input " + SEARCH_BOOK_BY_NAME + " for SEARCH_BOOK_BY_BOOK_NAME");
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Name + " for SEARCH_BOOK_BY_Author_Name");
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Surname + " for SEARCH_BOOK_BY_Author_Surname");
-        System.out.println("Please input " + SEARCH_BOOK_BY_PRICE +  " for SEARCH_BOOK_BY_PRICE");
+        System.out.println("Please input " + SEARCH_BOOK_BY_PRICE + " for SEARCH_BOOK_BY_PRICE");
         System.out.println("Please input " + UPDATE_BOOK + " for UPDATE_BOOK");
-        System.out.println("Please input " + DELETED_BOOK_BY_ID +  " for DELETED_BOOK_BY_ID");
+        System.out.println("Please input " + DELETED_BOOK_BY_ID + " for DELETED_BOOK_BY_ID");
     }
 }
