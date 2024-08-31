@@ -55,8 +55,8 @@ public class Book {
         this.authorSurName = authorSurName;
     }
 
-    public boolean getPrice(double price) {
-        return true;
+    public double getPrice() {
+        return price;
     }
 
     public void setPrice(double price) {

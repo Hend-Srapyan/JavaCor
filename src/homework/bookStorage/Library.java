@@ -13,9 +13,9 @@ public class Library {
     private static final String SEARCH_BOOK_BY_NAME = "3";
     private static final String SEARCH_BOOK_BY_Author_Name = "4";
     private static final String SEARCH_BOOK_BY_Author_Surname = "5";
-    private static final String UPDATE_BOOK = "6";
-    private static final String SEARCH_BOOK_BY_PRICE = "7";
-//  private static final String DELETED_BOOK = "8";
+    private static final String SEARCH_BOOK_BY_PRICE = "6";
+    private static final String UPDATE_BOOK = "7";
+    private static final String DELETED_BOOK_BY_ID = "8";
 
 
     public static void main(String[] args) {
@@ -43,15 +43,15 @@ public class Library {
                 case SEARCH_BOOK_BY_Author_Surname:
                     searchBookByAuthorSurName();
                     break;
-                case UPDATE_BOOK:
-                    updateBook();
-                    break;
                 case SEARCH_BOOK_BY_PRICE:
                     searchBookByPrice();
                     break;
-//                case DELETED_BOOK:
-//                    deletedBook();
-//                    break;
+                case UPDATE_BOOK:
+                    updateBook();
+                    break;
+                case DELETED_BOOK_BY_ID:
+                    deletedBookById();
+                    break;
                 default:
                     System.out.println("Wrong command!");
             }
@@ -87,21 +87,33 @@ public class Library {
     }
 
     private static void searchBookByName() {
+        bookStorage.print();
         System.out.println("Please input book keyword");
         String keyword = scanner.nextLine();
         bookStorage.searchBookByName(keyword);
     }
 
     private static void searchBookByAuthorName() {
+        bookStorage.print();
         System.out.println("Please input author name keyword");
         String keyword = scanner.nextLine();
         bookStorage.searchBookByAuthorName(keyword);
     }
 
     private static void searchBookByAuthorSurName() {
+        bookStorage.print();
         System.out.println("Please input author surname keyword");
         String keyword = scanner.nextLine();
         bookStorage.searchBookByAuthorSurName(keyword);
+    }
+
+    private static void searchBookByPrice() {
+        bookStorage.print();
+        System.out.println("Please input minimum price");
+        int minPrice = Integer.parseInt(scanner.nextLine());
+        System.out.println("Please input maximum price");
+        int maxPrice = Integer.parseInt(scanner.nextLine());
+        bookStorage.searchBookByPrice(minPrice, maxPrice);
     }
 
     private static void updateBook() {
@@ -145,21 +157,14 @@ public class Library {
         }
     }
 
-    private static void searchBookByPrice() {
-        System.out.println("Please input book price");
-        double price = Double.parseDouble(scanner.nextLine());
-        bookStorage.searchBookByPrice(price);
-    }
 
-//  private static void deletedBook() {
-//        bookStorage.print();
-//        System.out.println("Please input book ID");
-//        String bookId = scanner.nextLine();
-//        Book bookById = bookStorage.getBookById(bookId);
-//        if (bookById.equals(bookId)){
-//            bookStorage.deletedBookById(bookId);
-//        }
-//    }
+  private static void deletedBookById() {
+        bookStorage.print();
+        System.out.println("Please input book id");
+        String id = scanner.nextLine();
+        bookStorage.deletedBookById(id);
+        System.out.println("Book deleted ");
+    }
 
     private static void printCommands() {
         System.out.println("Please input " + EXIT + " for EXIT");
@@ -168,8 +173,8 @@ public class Library {
         System.out.println("Please input " + SEARCH_BOOK_BY_NAME + " for SEARCH_BOOK_BY_BOOK_NAME");
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Name + " for SEARCH_BOOK_BY_Author_Name");
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Surname + " for SEARCH_BOOK_BY_Author_Surname");
-        System.out.println("Please input " + UPDATE_BOOK + " for UPDATE_BOOK");
         System.out.println("Please input " + SEARCH_BOOK_BY_PRICE +  " for SEARCH_BOOK_BY_PRICE");
-//      System.out.println("Please input " + DELETED_BOOK +  " for DELETED_BOOK");
+        System.out.println("Please input " + UPDATE_BOOK + " for UPDATE_BOOK");
+        System.out.println("Please input " + DELETED_BOOK_BY_ID +  " for DELETED_BOOK_BY_ID");
     }
 }
