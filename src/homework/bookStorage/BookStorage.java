@@ -59,18 +59,18 @@ public class BookStorage {
         return null;
     }
 
+    public void searchBookByPrice(double price){
+        for (int i = 0; i < size; i++) {
+            if (books[i].getPrice(price)){
+                System.out.println(books[i]);
+            }
+        }
+    }
+
 //    public Book deletedBookById(String id){
 //        for (int i = 0; i < size; i++) {
 //
 //        }
 //        return null;
 //    }
-
-    public void searchBookByPrice(double price){
-        for (int i = 0; i < size; i++) {
-            if (books[i].equals(price)){
-                System.out.println(books[i]);
-            }
-        }
-    }
 }

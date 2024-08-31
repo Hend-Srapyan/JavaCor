@@ -14,8 +14,8 @@ public class Library {
     private static final String SEARCH_BOOK_BY_Author_Name = "4";
     private static final String SEARCH_BOOK_BY_Author_Surname = "5";
     private static final String UPDATE_BOOK = "6";
-//  private static final String DELETED_BOOK = "7";
-//  private static final String SEARCH_BOOK_BY_PRICE = "8";
+    private static final String SEARCH_BOOK_BY_PRICE = "7";
+//  private static final String DELETED_BOOK = "8";
 
 
     public static void main(String[] args) {
@@ -46,11 +46,11 @@ public class Library {
                 case UPDATE_BOOK:
                     updateBook();
                     break;
+                case SEARCH_BOOK_BY_PRICE:
+                    searchBookByPrice();
+                    break;
 //                case DELETED_BOOK:
 //                    deletedBook();
-//                    break;
-//                case SEARCH_BOOK_BY_PRICE:
-//                    searchBookByPrice();
 //                    break;
                 default:
                     System.out.println("Wrong command!");
@@ -145,7 +145,13 @@ public class Library {
         }
     }
 
-//    private static void deletedBook() {
+    private static void searchBookByPrice() {
+        System.out.println("Please input book price");
+        double price = Double.parseDouble(scanner.nextLine());
+        bookStorage.searchBookByPrice(price);
+    }
+
+//  private static void deletedBook() {
 //        bookStorage.print();
 //        System.out.println("Please input book ID");
 //        String bookId = scanner.nextLine();
@@ -155,12 +161,6 @@ public class Library {
 //        }
 //    }
 
-    private static void searchBookByPrice() {
-        System.out.println("Please input book price");
-        double price = Double.parseDouble(scanner.nextLine());
-        bookStorage.searchBookByPrice(price);
-    }
-
     private static void printCommands() {
         System.out.println("Please input " + EXIT + " for EXIT");
         System.out.println("Please input " + ADD_BOOK + " for ADD_BOOK");
@@ -169,7 +169,7 @@ public class Library {
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Name + " for SEARCH_BOOK_BY_Author_Name");
         System.out.println("Please input " + SEARCH_BOOK_BY_Author_Surname + " for SEARCH_BOOK_BY_Author_Surname");
         System.out.println("Please input " + UPDATE_BOOK + " for UPDATE_BOOK");
+        System.out.println("Please input " + SEARCH_BOOK_BY_PRICE +  " for SEARCH_BOOK_BY_PRICE");
 //      System.out.println("Please input " + DELETED_BOOK +  " for DELETED_BOOK");
-//      System.out.println("Please input " + SEARCH_BOOK_BY_PRICE +  " for SEARCH_BOOK_BY_PRICE");
     }
 }
