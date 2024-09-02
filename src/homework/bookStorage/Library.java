@@ -3,26 +3,15 @@ package homework.bookStorage;
 
 import java.util.Scanner;
 
-public class Library {
+public class Library implements LibraryCommands {
     private static Scanner scanner = new Scanner(System.in);
     private static BookStorage bookStorage = new BookStorage();
-
-    private static final String EXIT = "0";
-    private static final String ADD_BOOK = "1";
-    private static final String PRINT_ALL_BOOKS = "2";
-    private static final String SEARCH_BOOK_BY_NAME = "3";
-    private static final String SEARCH_BOOK_BY_Author_Name = "4";
-    private static final String SEARCH_BOOK_BY_Author_Surname = "5";
-    private static final String SEARCH_BOOK_BY_PRICE = "6";
-    private static final String UPDATE_BOOK = "7";
-    private static final String DELETED_BOOK_BY_ID = "8";
-
 
     public static void main(String[] args) {
 
         boolean isRun = true;
         while (isRun) {
-            printCommands();
+            LibraryCommands.printCommands();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -37,10 +26,10 @@ public class Library {
                 case SEARCH_BOOK_BY_NAME:
                     searchBookByName();
                     break;
-                case SEARCH_BOOK_BY_Author_Name:
+                case SEARCH_BOOK_BY_AUTHOR_NAME:
                     searchBookByAuthorName();
                     break;
-                case SEARCH_BOOK_BY_Author_Surname:
+                case SEARCH_BOOK_BY_AUTHOR_SURNAME:
                     searchBookByAuthorSurName();
                     break;
                 case SEARCH_BOOK_BY_PRICE:
@@ -165,15 +154,5 @@ public class Library {
         System.out.println("Book deleted ");
     }
 
-    private static void printCommands() {
-        System.out.println("Please input " + EXIT + " for EXIT");
-        System.out.println("Please input " + ADD_BOOK + " for ADD_BOOK");
-        System.out.println("Please input " + PRINT_ALL_BOOKS + " for PRINT_ALL_BOOKS");
-        System.out.println("Please input " + SEARCH_BOOK_BY_NAME + " for SEARCH_BOOK_BY_BOOK_NAME");
-        System.out.println("Please input " + SEARCH_BOOK_BY_Author_Name + " for SEARCH_BOOK_BY_Author_Name");
-        System.out.println("Please input " + SEARCH_BOOK_BY_Author_Surname + " for SEARCH_BOOK_BY_Author_Surname");
-        System.out.println("Please input " + SEARCH_BOOK_BY_PRICE + " for SEARCH_BOOK_BY_PRICE");
-        System.out.println("Please input " + UPDATE_BOOK + " for UPDATE_BOOK");
-        System.out.println("Please input " + DELETED_BOOK_BY_ID + " for DELETED_BOOK_BY_ID");
-    }
+
 }
