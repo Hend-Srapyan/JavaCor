@@ -41,9 +41,9 @@ public class MedicalDemo implements MedicalCommands {
                 case ADD_PATIENT:
                     addPatient();
                     break;
-//                case PRINT_ALL_PATIENTS_BY_DOCTOR:
-//                    printAllPatientsByDoctor();
-//                    break;
+                case PRINT_ALL_PATIENTS_BY_DOCTOR:
+                    printAllPatientsByDoctor();
+                    break;
                 case PRINT_ALL_PATIENTS:
                     patientStorage.print();
                     break;
@@ -56,15 +56,15 @@ public class MedicalDemo implements MedicalCommands {
 
     }
 
-//    private static void printAllPatientsByDoctor() {
-//        doctorStorage.print();
-//        System.out.println("Please input doctor ID");
-//        String doctorId = scanner.nextLine();
-//        Doctor doctorById = doctorStorage.getDoctorById(doctorId);
-//        if (doctorById != null) {
-//            patientStorage.print();
-//        }
-//    }
+    private static void printAllPatientsByDoctor() {
+        doctorStorage.print();
+        System.out.println("Please input doctor ID");
+        String doctorId = scanner.nextLine();
+        Doctor doctorById = doctorStorage.getDoctorById(doctorId);
+        if (doctorById != null) {
+            patientStorage.printAllPatientsByDoctor(doctorById);
+        }
+    }
 
     private static void addPatient() {
 
