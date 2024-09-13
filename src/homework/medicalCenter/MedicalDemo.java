@@ -60,9 +60,9 @@ public class MedicalDemo implements MedicalCommands {
         doctorStorage.print();
         System.out.println("Please input doctor ID");
         String doctorId = scanner.nextLine();
-        Doctor doctorById = doctorStorage.getDoctorById(doctorId);
-        if (doctorById != null) {
-            patientStorage.printAllPatientsByDoctor(doctorById);
+        Doctor doctor = doctorStorage.getDoctorById(doctorId);
+        if (doctor != null) {
+            patientStorage.printAllPatientsByDoctor(doctor);
         }
     }
 
