@@ -1,10 +1,16 @@
 package homework.employee;
 
+import homework.employee.model.Company;
+import homework.employee.model.Employee;
+import homework.employee.storage.CompanyStorage;
+import homework.employee.storage.EmployeeStorage;
+
 import java.util.Scanner;
 
 public class EmployeeDemo implements EmployeeCommands {
     private static Scanner scanner = new Scanner(System.in);
     private static EmployeeStorage employeeStorage = new EmployeeStorage();
+    private static CompanyStorage companyStorage = new CompanyStorage();
 
     public static void main(String[] args) {
 
@@ -16,9 +22,12 @@ public class EmployeeDemo implements EmployeeCommands {
                 case EXIT:
                     isRun = false;
                     break;
-                case ADD_EMPLOYEE:
-                    addEmployee();
-                    break;
+//                case ADD_COMPANY:
+//                    addCompany();
+//                    break;
+//                case ADD_EMPLOYEE:
+//                    addEmployee();
+//                    break;
                 case PRINT_ALL_EMPLOYEE:
                     employeeStorage.print();
                     break;
@@ -30,6 +39,30 @@ public class EmployeeDemo implements EmployeeCommands {
                     break;
             }
         }
+    }
+
+    private static void addCompany() {
+        System.out.println("Please input Company id, name, address, age");
+        String companyStr = scanner.nextLine();
+        String[] companyArr = companyStr.split(",");
+        if (companyArr.length == 4){
+            String id = companyArr[0];
+            if (companyStorage.getCompanyByID(id) == null){
+                Company company = new Company();
+                company.setId(id);
+                company.setName(companyArr[1]);
+                company.setAddress(companyArr[2]);
+                company.setAge(Integer.parseInt(companyArr[3]));
+                companyStorage.add(company);
+                System.out.println("Company added!");
+            }else {
+                System.out.println("Company with id " + id + " already  exist");
+            }
+
+        }
+
+
+
     }
 
     private static void addEmployee() {

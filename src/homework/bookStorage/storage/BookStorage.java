@@ -1,4 +1,8 @@
-package homework.bookStorage;
+package homework.bookStorage.storage;
+
+import homework.bookStorage.model.Book;
+
+
 
 public class BookStorage {
 
@@ -32,24 +36,6 @@ public class BookStorage {
             }
         }
     }
-
-    public void searchBookByAuthorName(String keyword) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getAuthorName().contains(keyword)) {
-                System.out.println(books[i]);
-            }
-        }
-    }
-
-    public void searchBookByAuthorSurName(String keyword) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getAuthorSurName().contains(keyword)) {
-                System.out.println(books[i]);
-            }
-        }
-    }
-
-
     public Book getBookById(String id) {
         for (int i = 0; i < size; i++) {
             if (books[i].getId().equals(id)) {
