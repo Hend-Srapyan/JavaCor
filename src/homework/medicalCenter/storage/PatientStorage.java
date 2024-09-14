@@ -38,9 +38,9 @@ public class PatientStorage {
         return null;
     }
 
-    public void printAllPatientsByDoctor(Doctor doctor){
-        for (int i = 0; i <= size; i++) {
-            if (patients[i].getDoctor().equals(doctor)){
+    public void printAllPatientsByDoctor(Doctor doctor) {
+        for (int i = 0; i < size; i++) {
+            if (patients[i].getDoctor().equals(doctor)) {
                 System.out.println(patients[i]);
             }
         }

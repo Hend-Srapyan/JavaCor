@@ -52,8 +52,6 @@ public class MedicalDemo implements MedicalCommands {
                     break;
             }
         }
-
-
     }
 
     private static void printAllPatientsByDoctor() {
