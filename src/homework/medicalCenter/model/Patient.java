@@ -99,4 +99,5 @@ public class Patient {
                 ", registerDataTime = " + DateUtil.fromDateToString(registerDataTime) +
                 '}';
     }
+
 }

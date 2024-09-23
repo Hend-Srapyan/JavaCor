@@ -96,4 +96,5 @@ public class Doctor {
                 ", profession = " + profession + '\'' +
                 '}';
     }
+
 }
