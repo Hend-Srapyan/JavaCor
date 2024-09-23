@@ -10,7 +10,7 @@ public interface AdminCommands {
     String PRINT_ORDERS = "5";
     String CHANGE_ORDER_STATUS = "6";
 
-    static void adminCommands(){
+    static void adminCommands() {
         System.out.println("Please input " + LOGOUT + " for LOGOUT");
         System.out.println("Please input " + ADD_PRODUCT + " for ADD_PRODUCT");
         System.out.println("Please input " + REMOVE_PRODUCT_BY_ID + " for REMOVE_PRODUCT_BY_ID");

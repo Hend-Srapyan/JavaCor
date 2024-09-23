@@ -95,9 +95,9 @@ public class MarketDemo implements MarketCommands, AdminCommands, UserCommands {
     }
 
     private static void removeProductById() {
-        if (productStorage.isEmpty()){
+        if (productStorage.isEmpty()) {
             System.err.println("Storage is empty");
-        }else {
+        } else {
             productStorage.print();
             System.out.println("Please input product id");
             String id = scanner.nextLine();
@@ -120,23 +120,23 @@ public class MarketDemo implements MarketCommands, AdminCommands, UserCommands {
         } else {
             System.err.println("Invalid information!");
         }
-        
+
     }
 
     private static void cancelOrderById() {
-        if (!orderStorage.isEmpty(currentUser.getId())){
+        if (!orderStorage.isEmpty(currentUser.getId())) {
             orderStorage.getOrderById(currentUser.getId());
             System.err.println("Please input order id for cansel");
             String orderId = scanner.nextLine();
             Order order = orderStorage.getOrderById(orderId);
-            if (order != null){
-                if (order.getUser().equals(currentUser)){
+            if (order != null) {
+                if (order.getUser().equals(currentUser)) {
                     order.setOrderStatus(OrderStatus.CANCELED);
                 }
-            }else {
+            } else {
                 System.err.println("INVALID ID");
             }
-        }else {
+        } else {
             System.err.println("EMPTY");
         }
     }
@@ -223,5 +223,5 @@ public class MarketDemo implements MarketCommands, AdminCommands, UserCommands {
                 System.err.println("The right  choose");
         }
     }
-    
+
 }

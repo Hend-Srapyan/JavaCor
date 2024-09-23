@@ -9,14 +9,14 @@ public class ProductStorage {
     private Product[] products = new Product[10];
     private int size;
 
-    public void print(){
+    public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(products[i]);
         }
     }
 
-    public void add(Product product){
-        if (size == products.length){
+    public void add(Product product) {
+        if (size == products.length) {
             extend();
         }
         products[++size] = product;
@@ -24,7 +24,7 @@ public class ProductStorage {
 
     private void extend() {
         Product[] tmp = new Product[size + 10];
-        System.arraycopy(products,0,tmp,0, size);
+        System.arraycopy(products, 0, tmp, 0, size);
         products = tmp;
     }
 
@@ -53,7 +53,7 @@ public class ProductStorage {
 
     }
 
-    public void printProductType(){
+    public void printProductType() {
         ProductType[] productTypes = ProductType.values();
         for (ProductType productType : productTypes) {
             System.out.println(productType.name());

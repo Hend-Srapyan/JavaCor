@@ -8,14 +8,14 @@ public class OrderStorage {
     private Order[] orders = new Order[10];
     private int size;
 
-    public void print(){
+    public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(orders[i]);
         }
     }
 
-    public void add(Order order){
-        if (size == orders.length){
+    public void add(Order order) {
+        if (size == orders.length) {
             extend();
         }
         orders[++size] = order;
@@ -23,7 +23,7 @@ public class OrderStorage {
 
     private void extend() {
         Order[] tmp = new Order[size + 10];
-        System.arraycopy(orders,0,tmp,0, size);
+        System.arraycopy(orders, 0, tmp, 0, size);
         orders = tmp;
     }
 
@@ -40,24 +40,24 @@ public class OrderStorage {
         return size <= -1;
     }
 
-    public void printPaymentMethod(){
+    public void printPaymentMethod() {
         PaymentMethod[] paymentMethods = PaymentMethod.values();
         for (PaymentMethod paymentMethod : paymentMethods) {
             System.out.println(paymentMethod);
         }
     }
 
-    public void getOrdersByUserId(String userId){
+    public void getOrdersByUserId(String userId) {
         for (int i = 0; i < size; i++) {
-            if (orders[i].getUser().getId().equals(userId)){
+            if (orders[i].getUser().getId().equals(userId)) {
                 System.out.println(orders[i]);
             }
         }
     }
 
-    public boolean isEmpty(String userId){
+    public boolean isEmpty(String userId) {
         for (int i = 0; i < size; i++) {
-            if (orders[i].getUser().getId().equals(userId)){
+            if (orders[i].getUser().getId().equals(userId)) {
                 return false;
             }
         }
